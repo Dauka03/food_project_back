@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-md-10">
+                    <div class="menu-bar">
+                        <img src="images/imgg1.png"  alt="menu-image" width="40px" height="30px" >
+                        <a href="index.html" class="header__logo mr-5 pt-3 pt-md-0 d-inline-block">Fast Food</a>
+                        <a href="menu.html" class="header__menu mr-4">Menu</a>
+                        <a href="delivery.html" class="header__menu mr-4">Delivery</a>
+                        <a href="contacts.html" class="header__menu mr-4">Contacts</a>
+                    </div>
+                </div>
+            
+
+                <div class="col-7 col-md-2 text-right mt-2">
+                    <a href="login.html" class="header__menu header__menu--cart">
+                        Cart
+                        <img src="images/cart-icon.svg" alt="cart-image" />
+                        <span>0</span>
+                    </a>
+                    <span class="header__hamburger hamburger d-md-none">&#9776;</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner mb-5">
+        <div class="hero-banner__container col-md-4 text-center mt-5">
+            <p class="hero-banner__text">Say Hello to FastFood!</p>
+            <h1 class="hero-banner__title">WELCOME</h1>
+            <div class="text-center pt-3 pb-3 pb-md-0">
+                <a href="menu.html" class="hero-banner__btn">Open Menu</a>
+            </div>
+        </div>
+    </section>
+
+
+{% block content%}
+    <section class="featured-products py-4 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 col-md-10">
+                    <h3 class="featured-products__title">Food</h3>
+                </div>
+                <div class="col-5 col-md-2 text-right">
+                    <a href="menu.html" class="featured-products__all-link">See All Food &#10140</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 border border-green mt-3"></div>
+                <div class="col-10 border border-grey  mt-3"></div>
+            </div>
+            
+            <div class="row">
+
+                <div class="col-md-3 mt-5">
+                    <a class="featured-products__card" href="hamburgertype.html">
+                        <img src="images/hamburger1.png" alt="" class="featured-products__img mb-3">
+                        <p class="featured-products__name"></p>
+                        <span class="featured-products__btn">Hamburger</span>
+                    </a>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a class="featured-products__card" href="pizzatype.html">
+                        <img src="images/pizza1.png"  alt="" class="featured-products__img mb-3" height="155">
+                        <p class="featured-products__name"></p>
+                        <span class="featured-products__btn">Pizza</span>
+                    </a>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a class="featured-products__card" href="Fries.html">
+                        <img src="images/fries1.png" alt="" class="featured-products__img mb-3" height="155">
+                        <p class="featured-products__name"></p>
+                        <span class="featured-products__btn">Fries</span>
+                    
+                    </a>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a class="featured-products__card" href="juicetype.html">
+                        <img src="images/png1.png" alt="" class="featured-products__img mb-3">
+                        <p class="featured-products__name"></p>
+                        <span class="featured-products__btn">Drinks</span>
+                    </a>
+                </div>
+           
+          
+            </div>
+            {% endblock content %}
+        </div>
+    </section>
+
+    <section class="combo py-4 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-7 col-md-10">
+                    <h3 class="combo__title">Combo</h3>
+                </div>
+                <div class="col-5 col-md-2 text-right">
+                    <a href="menu.html" class="combo__all-link">See All Food &#10140</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 border border-green mt-3"></div>
+                <div class="col-10 border border-grey mt-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mt-5">
+                    <a class="combo__card" href="Combo1.html">
+                        <img src="images/pngg3.png" alt="" class="combo__img mb-3" height="120">
+                        <p class="combo__name">Combo1</p>
+                        <span class="combo__btn">1800 ₸</span>
+                    </a>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a class="combo__card" href="Combo2.html">
+                        <img src="images/pngg4.png  " alt="" class="combo__img mb-3" height="120">
+                        <p class="combo__name">Combo2</p>
+                        <span class="combo__btn">2000 ₸</span>
+                    </a>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a class="combo__card" href="Combo3.html">
+                        <img src="images/pngg5.png" alt="" class="combo__img mb-3" height="120">
+                        <p class="combo__name">Combo3</p>
+                        <span class="combo__btn">2500 ₸</span>
+                    </a>
+                </div>
+                <div class="col-md-3 mt-5">
+                    <a class="combo__card" href="Combo4.html">
+                        <img src="images/pngg6.png" alt="" class="combo__img mb-3" height="120">
+                        <p class="combo__name">Combo4</p>
+                        <span class="combo__btn">3000 ₸ </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <section class="newsletter mt-5 pt-5 pb-5">
+        <div class="container newsletter__back">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="newsletter__video-link">
+                                <img src="images/paperplane-icon-white.svg" alt="play-icon" />
+                            </span>
+                        </div>
+                        <div class="col-md-10">
+                            <h3 class="newsletter__info mt-3">Subscribe to our newsletter
+                                & get <span>10% discount!</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input type="text" placeholder="Enter your email address" class="form-control newsletter__search mt-4">
+                        </div>
+                        <div class="col-md-3 mt-4">
+                            <a href="#" class="newsletter__btn">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="food mt-5 mb-5 pb-5">
+        <div class="container">
+            <div class="food__title text-center mb-2">@GambIT</div>
+            <h2 class="food__heading text-center mb-5 pb-4">We're on Instagram!</h2>
+            <div class="food__images mb-5 pb-5">
+                <a href="#">
+                    <img src="images/img1.png" width="15%" alt="beautiful-toys" class="food__image" />
+                </a>
+                <a href="#">
+                    <img src="images/img2.png" width="15%" alt="beautiful-toys" class="food__image" />
+                </a>
+                <a href="#">
+                    <img src="images/img3.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                </a>
+                <a href="#">
+                    <img src="images/img4.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                </a>
+                <a href="#">
+                    <img src="images/img5.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                </a>
+                <a href="#">
+                    <img src="images/img6.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="menu.html" class="food__btn mt-5">See More Photos</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer mt-5 pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 pt-3">
+                    <a href="index.html" class="footer__logo">FastFood</a>
+                </div>
+                <div class="col-md-6 pt-3">
+                    <a href="index.html" class="footer__link mr-4">Home</a>
+                    <a href="menu.html" class="footer__link mr-4">Menu</a>
+                    <a href="delivery.html" class="footer__link mr-4">Delivery</a>
+                    <a href="contacts.html" class="footer__link mr-2">Contacts</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-6 pt-3">
+                        <a href="#" class="footer__social-icon"><img src="images/twitter-icon-white.svg" alt="twitter-icon-white"></a>
+                        <a href="#" class="footer__social-icon"><img src="images/facebook-icon-white.svg" alt="facebook-icon-white"></a>
+                        <a href="#" class="footer__social-icon"><img src="images/instagram-icon-white.svg" alt="instagram-icon-white"></a>
+                        <a href="#" class="footer__social-icon"><img src="images/youtube-icon.svg" alt="youtube-icon"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer__copyrights mt-5">
+                <span class="footer__copyrights-text">Copyrights 2021 &copy; GambIT</span>
+            </p>
+        </div>
+    </section>
+
+    
+    <script src="{% static 'js/app.js' %}"></script>
+
+
+</body>
+
+</html>

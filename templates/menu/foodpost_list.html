@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block content%}
+
+    <section class="featured-products py-4 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h3 class="featured-products__title">Pizza</h3>
+                </div>
+                <div class="col-md-5 text-right">
+                    <a href="menu.html" class="featured-products__btn featured-product__btn--active">All Food</a>
+                    <a href="hamburgertype.html" class="featured-products__btn">Hamburger</a>
+                    <a href="pizzatype.html" class="featured-products__btn">Pizza</a>
+                    <a href="juicetype.html" class="featured-products__btn">Drinks</a>
+                    <a href="donertype.html" class="featured-products__btn">Doner</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 border border-green mt-3"></div>
+                <div class="col-10 border border-grey  mt-3"></div>
+            </div>
+
+            
+            <div class="row">
+                {% for post in foodpost_list %}
+                <div class="col-md-3 mt-5">
+                    <a class="featured-products__card" href="Pizza.html">
+                        <img src="{{ post.image.url }}" alt="" class="featured-products__img mb-3">
+                        <p class="featured-products__name">{{ post.title }}</p>
+                        <span class="featured-products__btn">{{ post.cost }} ₸</span>
+                    </a>
+                </div>
+            {% endfor %}
+               
+                
+              
+        
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
