@@ -1,12 +1,18 @@
 {% extends 'index.html' %}
 
 {% block content%}
-
+<section class="container mb-5">
+    <div class="breadcrumbs pt-3">
+        <a href="index.html" class="link-grey">Home</a>
+        <img src="images/arrow-right-mini-icon.svg" class="breadcrumbs-arrow">
+        <div class="d-inline-block">Catalog</div>
+    </div>
+</section>
     <section class="featured-products py-4 mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h3 class="featured-products__title">Pizza</h3>
+                    <h3 class="featured-products__title">{{ foodpost_list.first.category.name }}</h3>
                 </div>
                 <div class="col-md-5 text-right">
                     <a href="menu.html" class="featured-products__btn featured-product__btn--active">All Food</a>
@@ -24,13 +30,15 @@
             
             <div class="row">
                 {% for post in foodpost_list %}
+                    {% if post.title not in 'Pizza' %}
                 <div class="col-md-3 mt-5">
-                    <a class="featured-products__card" href="Pizza.html">
+                    <a class="featured-products__card" href="{{ post.get_absolute_url }}">
                         <img src="{{ post.image.url }}" alt="" class="featured-products__img mb-3">
                         <p class="featured-products__name">{{ post.title }}</p>
                         <span class="featured-products__btn">{{ post.cost }} ₸</span>
                     </a>
                 </div>
+                {% endif %}
             {% endfor %}
                
                 

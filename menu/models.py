@@ -1,6 +1,7 @@
 from distutils.command.upload import upload
 from unicodedata import category
 from django.db import models
+from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 
 # Create your models here.
@@ -37,8 +38,13 @@ class foodPost(models.Model):
         on_delete=models.SET_NULL,
         null=True
     )
-    def __str__(self):
-        return self.title
     cost = models.PositiveIntegerField(default=0)
     quantity = models.PositiveIntegerField(default=0)
     tags = models.ManyToManyField(Tag, related_name='foodPost')
+    slug = models.SlugField(max_length=100)
+    
+    def get_absolute_url(self):
+        return reverse("foodPost_single", kwargs={"slug": self.category.slug,'foodPost_slug': self.slug})
+    
+    def __str__(self):
+        return self.title

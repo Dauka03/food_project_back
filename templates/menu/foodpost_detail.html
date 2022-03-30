@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block content%}
+<section class="container mb-5">
+    <div class="breadcrumbs pt-3">
+        <a href="index.html" class="link-grey">Home</a>
+        <img src="images/arrow-right-mini-icon.svg" class="breadcrumbs-arrow">
+        <div class="d-inline-block">Catalog</div>
+    </div>
+</section>
+    <section class="menu">
+        <div class="container menu__back">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="menu__info mt-5 pt-4">
+                        <h2>{{ post.title}}</h2>
+                        <p>{{ post.text }}</p>
+                        <h4> {{ post.cost }} ₸</h4>
+                        <p>Quantity</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" name="number" value="1" class="menu__field pl-4">
+                                <button class="menu__button">Add cart</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/pizza1.png" alt="big-teddy-image" class="menu__image">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+ {% endblock content%}
