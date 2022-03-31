@@ -7,11 +7,13 @@ from menu.models import foodPost
 
 # Create your views here.
 
+
 class FoodPostListView(ListView):
     model = foodPost
-    
+
     def get_queryset(self):
         return foodPost.objects.filter(category__slug=self.kwargs.get('slug'))
+
 
 def home(request):
     return render(request, 'index.html')
