@@ -3,6 +3,7 @@ from unicodedata import category
 from django.db import models
 from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
+from ckeditor.fields import RichTextField
 
 # Create your models here.
         
@@ -30,7 +31,7 @@ class Tag(models.Model):
 
 class foodPost(models.Model):
     title = models.CharField(max_length=100)
-    text = models.TextField()
+    text = RichTextField()
     image = models.ImageField(upload_to='articles/')
     category = models.ForeignKey(
         Category,

@@ -13,7 +13,7 @@
                 <div class="col-md-5">
                     <div class="menu__info mt-5 pt-4">
                         <h2>{{ post.title}}</h2>
-                        <p>{{ post.text }}</p>
+                        <p>{{ post.text|safe }}</p>
                         <h4> {{ post.cost }} ₸</h4>
                         <p>Quantity</p>
                         <div class="row">
