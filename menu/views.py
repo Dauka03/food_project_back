@@ -1,13 +1,13 @@
 from msilib.schema import ListView
-from multiprocessing import context
-from unicodedata import category
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from menu.models import foodPost
+from menu.models import foodPost, Category
 
 # Create your views here.
-
+class HomeListView(ListView):
+    model = Category
+    template_name = "menu/home.html"
 class FoodPostListView(ListView):
     model = foodPost
     
