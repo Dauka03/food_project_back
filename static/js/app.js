@@ -41,4 +41,29 @@ function toggleMenu() {
 }
 $hamburger.addEventListener('click', toggleMenu);
 
+const spinner = document.getElementById('spinner')
+const tableBody = document.getElementById('table-body-box')
+
+const url = window.location.href
+console.log(url)
+
+$.ajax({
+    type: 'GET',
+    url: '/data-json/',
+    success: function(responce){
+        const data = JSON.parse(responce.data)
+        console.log(data)
+        data.forEach(el=>{
+            console.log(el.fields)
+            tableBody.innerHTML += `
+                <tr>
+                    <td>${el.pk}</td>
+                    <td><img src="${url}media/${el.fields.item}" height='40px'></td>
+                    <td>${el.fields.info}</td>
+                </tr>
+
+            `
+        })
+    }
+})
 

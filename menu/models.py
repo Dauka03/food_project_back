@@ -42,3 +42,22 @@ class foodPost(models.Model):
     cost = models.PositiveIntegerField(default=0)
     quantity = models.PositiveIntegerField(default=0)
     tags = models.ManyToManyField(Tag, related_name='foodPost')
+
+class Picture(models.Model):
+        item = models.ImageField(upload_to='images/')
+        info = models.CharField(max_length=150)
+
+        def __str__(self):
+            return str(self.pk)
+
+class Shipping(models.Model): 
+    customer = models.CharField(max_length=200, null=False) 
+    ord = models.CharField(max_length=200, null=False) 
+    address = models.CharField(max_length=200, null=False) 
+    city = models.CharField(max_length=200, null=False) 
+    state = models.CharField(max_length=200, null=False) 
+    zipcode = models.CharField(max_length=200, null=False) 
+    date_added = models.DateTimeField(auto_now_add=True) 
+    def __str__(self): 
+        return self.address 
+
