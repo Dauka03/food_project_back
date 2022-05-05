@@ -21,21 +21,28 @@
                         <a href="menu.html" class="header__menu mr-4">Menu</a>
                         <a href="delivery.html" class="header__menu mr-4">Delivery</a>
                         <a href="contacts.html" class="header__menu mr-4">Contacts</a>
+                        {% if user.is_authenticated %}
+                        <a class="header__menu mr-4">Basket</a>
+                        {% endif %}
                     </div>
                 </div>
             
 
                 <div class="col-7 col-md-2 text-right mt-2">
-                    <a href="login.html" class="header__menu header__menu--cart">
-                        Cart
-                        <img src="images/cart-icon.svg" alt="cart-image" />
-                        <span>0</span>
-                    </a>
+                    {% if user.is_authenticated %}
+        <p>Hi {{ user.username }}!</p>
+  <p><a href="{% url 'logout' %}" class="header__menu header__menu--cart">Log out</a></p>
+      {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}" class="header__menu header__menu--cart">Log In</a> <a href="{% url 'signup' %}" class="header__menu header__menu--cart">Sign Up</a>
+      {% endif %}
                     <span class="header__hamburger hamburger d-md-none">&#9776;</span>
                 </div>
             </div>
         </div>
     </header>
+
+
 
     <section class="hero-banner mb-5">
         <div class="hero-banner__container col-md-4 text-center mt-5">
@@ -49,6 +56,18 @@
 
 
 {% block content%}
+    <section class="hero-banner mb-5">
+        <div class="hero-banner__container col-md-4 text-center mt-5">
+            <p class="hero-banner__text">Say Hello to FastFood!</p>
+            <h1 class="hero-banner__title">WELCOME</h1>
+            <div class="text-center pt-3 pb-3 pb-md-0">
+                <a href="menu.html" class="hero-banner__btn">Open Menu</a>
+            </div>
+        </div>
+    </section>
+
+
+
     <section class="featured-products py-4 mb-5">
         <div class="container">
             <div class="row">
@@ -159,7 +178,7 @@
                     <div class="row">
                         <div class="col-md-2">
                             <span class="newsletter__video-link">
-                                <img src="images/paperplane-icon-white.svg" alt="play-icon" />
+                                <img src="{% static 'images/paperplane-icon-white.svg'%}" alt="play-icon" />
                             </span>
                         </div>
                         <div class="col-md-10">
@@ -191,22 +210,22 @@
             <h2 class="food__heading text-center mb-5 pb-4">We're on Instagram!</h2>
             <div class="food__images mb-5 pb-5">
                 <a href="#">
-                    <img src="images/img1.png" width="15%" alt="beautiful-toys" class="food__image" />
+                    <img src="{% static 'images/img1.png'%}" width="15%" alt="beautiful-toys" class="food__image" />
                 </a>
                 <a href="#">
-                    <img src="images/img2.png" width="15%" alt="beautiful-toys" class="food__image" />
+                    <img src="{% static 'images/img2.png'%}" width="15%" alt="beautiful-toys" class="food__image" />
                 </a>
                 <a href="#">
-                    <img src="images/img3.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                    <img src="{% static 'images/img3.jpg'%}" width="15%" alt="beautiful-toys" class="food__image" />
                 </a>
                 <a href="#">
-                    <img src="images/img4.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                    <img src="{% static 'images/img4.jpg'%}" width="15%" alt="beautiful-toys" class="food__image" />
                 </a>
                 <a href="#">
-                    <img src="images/img5.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                    <img src="{% static 'images/img5.jpg'%}" width="15%" alt="beautiful-toys" class="food__image" />
                 </a>
                 <a href="#">
-                    <img src="images/img6.jpg" width="15%" alt="beautiful-toys" class="food__image" />
+                    <img src="{% static 'images/img6.jpg'%}" width="15%" alt="beautiful-toys" class="food__image" />
                 </a>
             </div>
             <div class="text-center">
@@ -229,10 +248,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="col-md-6 pt-3">
-                        <a href="#" class="footer__social-icon"><img src="images/twitter-icon-white.svg" alt="twitter-icon-white"></a>
-                        <a href="#" class="footer__social-icon"><img src="images/facebook-icon-white.svg" alt="facebook-icon-white"></a>
-                        <a href="#" class="footer__social-icon"><img src="images/instagram-icon-white.svg" alt="instagram-icon-white"></a>
-                        <a href="#" class="footer__social-icon"><img src="images/youtube-icon.svg" alt="youtube-icon"></a>
+                        <a href="#" class="footer__social-icon"><img src="{% static 'images/twitter-icon-white.svg'%}" alt="twitter-icon-white"></a>
+                        <a href="#" class="footer__social-icon"><img src="{% static 'images/facebook-icon-white.svg'%}" alt="facebook-icon-white"></a>
+                        <a href="#" class="footer__social-icon"><img src="{% static 'images/instagram-icon-white.svg'%}" alt="instagram-icon-white"></a>
+                        <a href="#" class="footer__social-icon"><img src="{% static 'images/youtube-icon.svg'%}" alt="youtube-icon"></a>
                     </div>
                 </div>
             </div>
@@ -249,3 +268,19 @@
 </body>
 
 </html>
+
+    © 2022 GitHub, Inc.
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+Loading complete
