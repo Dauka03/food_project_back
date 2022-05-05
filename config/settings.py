@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'mptt',
     'ckeditor',
-
     'menu',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +138,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 CKEDITOR_UPLOAD_PATH = "uploads/"
+CART_SESSION_ID = 'cart'

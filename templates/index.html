@@ -22,7 +22,7 @@
                         <a href="delivery.html" class="header__menu mr-4">Delivery</a>
                         <a href="contacts.html" class="header__menu mr-4">Contacts</a>
                         {% if user.is_authenticated %}
-                        <a class="header__menu mr-4">Basket</a>
+                        <agit  class="header__menu mr-4">Basket</a>
                         {% endif %}
                     </div>
                 </div>
@@ -41,19 +41,6 @@
             </div>
         </div>
     </header>
-
-
-
-    <section class="hero-banner mb-5">
-        <div class="hero-banner__container col-md-4 text-center mt-5">
-            <p class="hero-banner__text">Say Hello to FastFood!</p>
-            <h1 class="hero-banner__title">WELCOME</h1>
-            <div class="text-center pt-3 pb-3 pb-md-0">
-                <a href="menu.html" class="hero-banner__btn">Open Menu</a>
-            </div>
-        </div>
-    </section>
-
 
 {% block content%}
     <section class="hero-banner mb-5">
