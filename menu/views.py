@@ -5,9 +5,9 @@ from django.views.generic import ListView, DetailView
 from menu.models import foodPost, Category
 
 # Create your views here.
-class HomeListView(ListView):
+class MenuListView(ListView):
     model = Category
-    template_name = "menu/home.html"
+    template_name = "menu/menu.html"
 class FoodPostListView(ListView):
     model = foodPost
     

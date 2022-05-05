@@ -17,10 +17,10 @@
                 <div class="col-5 col-md-10">
                     <div class="menu-bar">
                         <img src="{% static 'images/imgg1.png' %}"  alt="menu-image" width="40px" height="30px" >
-                        <a href="index.html" class="header__logo mr-5 pt-3 pt-md-0 d-inline-block">Fast Food</a>
-                        <a href="menu.html" class="header__menu mr-4">Menu</a>
+                        <a href="/" class="header__logo mr-5 pt-3 pt-md-0 d-inline-block">Fast Food</a>
+                        <a href="/menu" class="header__menu mr-4">Menu</a>
                         <a href="delivery.html" class="header__menu mr-4">Delivery</a>
-                        <a href="contacts.html" class="header__menu mr-4">Contacts</a>
+                        <a href="/contacts " class="header__menu mr-4">Contacts</a>
                     </div>
                 </div>
             
@@ -46,6 +46,7 @@
             </div>
         </div>
     </section>
+    
 
 
 
@@ -98,28 +99,28 @@
             <div class="row">
                 <div class="col-md-3 mt-5">
                     <a class="combo__card" href="Combo1.html">
-                        <img src="images/pngg3.png" alt="" class="combo__img mb-3" height="120">
+                        <img src="{% static 'images/pngg3.png'%}" alt="" class="combo__img mb-3" height="120">
                         <p class="combo__name">Combo1</p>
                         <span class="combo__btn">1800 ₸</span>
                     </a>
                 </div>
                 <div class="col-md-3 mt-5">
                     <a class="combo__card" href="Combo2.html">
-                        <img src="images/pngg4.png  " alt="" class="combo__img mb-3" height="120">
+                        <img src="{% static 'images/pngg4.png' %} " alt="" class="combo__img mb-3" height="120">
                         <p class="combo__name">Combo2</p>
                         <span class="combo__btn">2000 ₸</span>
                     </a>
                 </div>
                 <div class="col-md-3 mt-5">
                     <a class="combo__card" href="Combo3.html">
-                        <img src="images/pngg5.png" alt="" class="combo__img mb-3" height="120">
+                        <img src="{% static 'images/pngg5.png' %}" alt="" class="combo__img mb-3" height="120">
                         <p class="combo__name">Combo3</p>
                         <span class="combo__btn">2500 ₸</span>
                     </a>
                 </div>
                 <div class="col-md-3 mt-5">
                     <a class="combo__card" href="Combo4.html">
-                        <img src="images/pngg6.png" alt="" class="combo__img mb-3" height="120">
+                        <img src="{% static 'images/pngg6.png' %}" alt="" class="combo__img mb-3" height="120">
                         <p class="combo__name">Combo4</p>
                         <span class="combo__btn">3000 ₸ </span>
                     </a>
@@ -131,7 +132,7 @@
     
 
 
-    <section class="newsletter mt-5 pt-5 pb-5">
+    <section class="reveal newsletter mt-5 pt-5 pb-5">
         <div class="container newsletter__back">
             <div class="row">
                 <div class="col-md-6">

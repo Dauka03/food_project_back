@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-
+from django.core.mail import send_mail
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'ckeditor',
 
     'menu',
+    'sendemail',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = '200103292@stu.sdu.edu.kz'
+EMAIL_HOST_PASSWORD = '99183813'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = '200103292@stu.sdu.edu.kz'
+RECIPIENTS_EMAIL = False
