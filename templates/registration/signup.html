@@ -1,3 +1,11 @@
+ {% comment %} {% block content %}
+<h2>Sign up</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Sign up</button>
+</form>
+{% endblock content %} {% endcomment %}
 <!DOCTYPE html>
 <html lang="en">
   {% load static %}
@@ -6,24 +14,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign up</title>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/app.css' %}">
 </head>
 <body>
     <section class="login">
         <div class="login-container">
-             <h1 class="form--title">User Login</h1>
-             {% if form.errors %}
-        <p>
-            Your username and password didn't match.
-            Please try again.
-        </p>
-{% endif %}
-<form method="post" class="login-form">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
+             <h1 class="form--title">Sign Up</h1>
+             <form method="post" class="login-form">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Sign up</button>
+            </form>
         </div>
     </section>
 

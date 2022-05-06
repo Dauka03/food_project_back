@@ -4,11 +4,15 @@ from unicodedata import category
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, DetailView
 
-from menu.models import Tag, foodPost
+from menu.models import Tag, foodPost, Category
 from cart.forms import CartAddProductForm
 
 
 # Create your views here.
+
+class MenuListView(ListView):
+    model = Category
+    template_name = "menu/menu.html"
 
 
 class FoodPostListView(ListView):

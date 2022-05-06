@@ -11,6 +11,7 @@ from ckeditor.fields import RichTextField
 class Category(MPTTModel):
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
+    image = models.ImageField(upload_to='articles/')
     parent = TreeForeignKey(
         'self',
         related_name='children',
