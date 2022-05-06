@@ -1212,3 +1212,20 @@ section .text-container .text-box h3 {
   transform: translateY(0);
   opacity: 1;
 }
+
+.ghost-button {
+  display: inline-block;
+  width: 200px;
+  padding: 8px;
+  color: rgb(255, 0, 0);
+  border: 1px solid rgb(255, 0, 0);
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
+}

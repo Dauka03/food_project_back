@@ -24,7 +24,7 @@
                         <a href="{% url "orders:order_create" %}" class="header__menu mr-4">
                             Checkout
                         </a>            
-                        {% endif %}                      
+                        {% endif %}                         
                     </div>
                 </div>
     
@@ -55,45 +55,55 @@
             </div>
         </div>
     </header>
-    <section class="hero-banner mb-5">
-        <div class="hero-banner__container col-md-4 text-center mt-5">
-            <p class="hero-banner__text">Say Hello to FastFood!</p>
-            <h1 class="hero-banner__title">WELCOME</h1>
-            <div class="text-center pt-3 pb-3 pb-md-0">
-                <a href="/menu" class="hero-banner__btn">Open Menu</a>
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <div class="order-info">
+        <h3>Your order</h3>
+        <ul>
+            {% for item in cart %}
+                <li>
+                    {{ item.quantity }}x {{ item.product.name }}
+                    <span>${{ item.total_price }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <p>Total: ${{ cart.get_total_price }}</p>
+    </div>
+    <form action="." method="post" class="order-form">
+        {{ form.as_p }}
+        <p><input type="submit" value="Place order"></p>
+        {% csrf_token %}
+    </form>
+{% endblock %}
+
+<section class="footer mt-5 pt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 pt-3">
+                <a href="index.html" class="footer__logo">FastFood</a>
             </div>
-        </div>
-
-        
-
-    </section>
-    <section class="footer mt-5 pt-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2 pt-3">
-                    <a href="index.html" class="footer__logo">FastFood</a>
-                </div>
+            <div class="col-md-6 pt-3">
+                <a href="index.html" class="footer__link mr-4">Home</a>
+                <a href="/menu" class="footer__link mr-4">Menu</a>
+                <a href="delivery.html" class="footer__link mr-4">Delivery</a>
+                <a href="/contacts" class="footer__link mr-2">Contacts</a>
+            </div>
+            <div class="col-md-4">
                 <div class="col-md-6 pt-3">
-                    <a href="index.html" class="footer__link mr-4">Home</a>
-                    <a href="/menu" class="footer__link mr-4">Menu</a>
-                    <a href="delivery.html" class="footer__link mr-4">Delivery</a>
-                    <a href="/contacts" class="footer__link mr-2">Contacts</a>
-                </div>
-                <div class="col-md-4">
-                    <div class="col-md-6 pt-3">
-                        <a href="#" class="footer__social-icon"><img src="{% static 'images/twitter-icon-white.svg'%}" alt="twitter-icon-white"></a>
-                        <a href="#" class="footer__social-icon"><img src="{% static 'images/facebook-icon-white.svg'%}" alt="facebook-icon-white"></a>
-                        <a href="#" class="footer__social-icon"><img src="{% static 'images/instagram-icon-white.svg'%}" alt="instagram-icon-white"></a>
-                        <a href="#" class="footer__social-icon"><img src="{% static 'images/youtube-icon.svg'%}" alt="youtube-icon"></a>
-                    </div>
+                    <a href="#" class="footer__social-icon"><img src="{% static 'images/twitter-icon-white.svg'%}" alt="twitter-icon-white"></a>
+                    <a href="#" class="footer__social-icon"><img src="{% static 'images/facebook-icon-white.svg'%}" alt="facebook-icon-white"></a>
+                    <a href="#" class="footer__social-icon"><img src="{% static 'images/instagram-icon-white.svg'%}" alt="instagram-icon-white"></a>
+                    <a href="#" class="footer__social-icon"><img src="{% static 'images/youtube-icon.svg'%}" alt="youtube-icon"></a>
                 </div>
             </div>
-            <p class="footer__copyrights mt-5">
-                <span class="footer__copyrights-text">Copyrights 2021 &copy; GambIT</span>
-            </p>
         </div>
-    </section>
-    
+        <p class="footer__copyrights mt-5">
+            <span class="footer__copyrights-text">Copyrights 2021 &copy; GambIT</span>
+        </p>
+    </div>
+</section>
+
 </body>
 
 </html>

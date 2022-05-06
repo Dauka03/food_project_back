@@ -19,8 +19,12 @@
                         <img src="{% static 'images/imgg1.png' %}"  alt="menu-image" width="40px" height="30px" >
                         <a href="/" class="header__logo mr-5 pt-3 pt-md-0 d-inline-block">Fast Food</a>
                         <a href="/menu" class="header__menu mr-4">Menu</a>
-                        <a href="delivery.html" class="header__menu mr-4">Delivery</a>
                         <a href="/contacts " class="header__menu mr-4">Contacts</a>
+                        {% if user.is_authenticated %}
+                        <a href="{% url "orders:order_create" %}" class="header__menu mr-4">
+                            Checkout
+                        </a>            
+                        {% endif %}            
                     </div>
                 </div>
             

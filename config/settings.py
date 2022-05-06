@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'cart',
     'sendemail',
     'home',
+    'orders',
 ]
 
 MIDDLEWARE = [
